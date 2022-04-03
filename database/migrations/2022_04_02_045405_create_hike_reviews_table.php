@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateItemCartOrderTables extends Migration
+class CreateHikeReviewsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateItemCartOrderTables extends Migration
      */
     public function up()
     {
-        Schema::create('cartItems', function (Blueprint $table) {
-            $table->increments('id');
-            $table->integer('user_id')->unsigned();
+        Schema::create('hike_reviews', function (Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger('hike_id')->nullable();
+            $table->foreign('hike_id')->references('id')->on('hikes');
+            $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
-            $table->integer('product_id')->unsigned();
-            $table->foreign('product_id')->references('id')->on('products');
-            $table->integer('amount');
+            $table->text('comment');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateItemCartOrderTables extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cartItems');
+        Schema::dropIfExists('hike_reviews');
     }
 }

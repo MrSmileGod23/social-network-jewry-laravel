@@ -9,3 +9,5 @@ Route::view('/', 'home');
 
 
 Auth::routes();
+
+Route::get('/profile/{id}',[UserController::class,'user'])->name('user')->middleware('auth');

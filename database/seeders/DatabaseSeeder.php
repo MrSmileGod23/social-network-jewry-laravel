@@ -14,114 +14,49 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('roles')->insert([
+        DB::table('hike_types')->insert([
             [
-                'name' => 'Администратор',
-                'slug' => 'admin',
+                'name' => 'Пешеходный'
             ], [
-                'name' => 'Пользователь',
-                'slug' => 'user',
+                'name' => 'Водный'
+            ], [
+                'name' => 'Горный'
+            ], [
+                'name' => 'Лыжный'
+            ], [
+                'name' => 'Велосипедный'
             ]
         ]);
-        DB::table('genres')->insert([
+        DB::table('cities')->insert([
             [
-                'name' => 'Action',
-                'slug' => 'Action',
+                'name' => 'Челябинск'
+            ],[
+                'name' => 'Москва'
+            ],[
+                'name' => 'Екатеринбург'
+            ],[
+                'name' => 'Санкт-Петербург'
+            ],[
+                'name' => 'Самара'
+            ],[
+                'name' => 'Воронеж'
+            ],[
+                'name' => 'Пермь'
             ],
-            [
-                'name' => 'Adventure',
-                'slug' => 'Adventure',
-            ],
-            [
-                'name' => 'Fighting',
-                'slug' => 'Fighting',
-            ],
-            [
-                'name' => 'Platform',
-                'slug' => 'Platform',
-            ],
-            [
-                'name' => 'Puzzle',
-                'slug' => 'Puzzle',
-            ],
-            [
-                'name' => 'Racing',
-                'slug' => 'Racing',
-            ],
-            [
-                'name' => 'RPG',
-                'slug' => 'RPG',
-            ],
-            [
-                'name' => 'Action RPG',
-                'slug' => 'ActionRPG',
-            ],
-            [
-                'name' => 'Sports',
-                'slug' => 'Sports',
-            ],
-            [
-                'name' => 'Strategy',
-                'slug' => 'Strategy',
-            ],
-            [
-                'name' => 'Simulator',
-                'slug' => 'Simulator',
-            ]
+
         ]);
-        DB::table('publishers')->insert([
+        DB::table('article_themes')->insert([
             [
-                'name' => 'Electronic Arts',
-                'slug' => 'ElectronicArts',
-            ],
-            [
-                'name' => 'Mihoyo',
-                'slug' => 'Mihoyo',
-            ],
-            [
-                'name' => 'Rockstar Games',
-                'slug' => 'Rockstar',
-            ],
-            [
-                'name' => 'Ubisoft Entertainment',
-                'slug' => 'Ubisoft',
-            ],
-            [
-                'name' => 'Bethesda Softworks',
-                'slug' => 'Bethesda',
-            ],
-            [
-                'name' => 'CD Projekt RED',
-                'slug' => 'CDProjektRED',
-            ],
-            [
-                'name' => 'Bandai Namco Entertainment',
-                'slug' => 'BandaiNamcoEntertainment',
-            ],
-            [
-                'name' => 'Activision',
-                'slug' => 'Activision',
-            ],
-            [
-                'name' => 'Square Enix',
-                'slug' => 'SquareEnix',
-            ],
-            [
-                'name' => 'Capcom',
-                'slug' => 'Capcom',
-            ],
-            [
-                'name' => 'Sega',
-                'slug' => 'Sega',
-            ],
-            [
-                'name' => '505 Games',
-                'slug' => '505Games',
-            ],
-            [
-                'name' => 'Blizzard Entertainment',
-                'slug' => 'BlizzardEntertainment',
-            ],
+                'name' => 'Подготовка'
+            ],[
+                'name' => 'Поход'
+            ],[
+                'name' => 'Места'
+            ],[
+                'name' => 'Еда'
+            ],[
+                'name' => 'Снаряжение'
+            ]
         ]);
     }
 }

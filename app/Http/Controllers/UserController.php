@@ -10,5 +10,9 @@ use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
 {
-
+    public function user($id)
+    {
+//        return view('profile',['data'=>User::all()->find($id)],['dataOrder'=>Order::all()->find($id)]);
+        $data= User::all()->find($id);
+    }
 }
