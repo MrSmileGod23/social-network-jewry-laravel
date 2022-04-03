@@ -11,16 +11,35 @@
     --bs-back: #F0F0F0;
     --bs-front: #3D9B34;
 }
+
 body{
     font-family: 'Gotham Pro Light';
     background-color: var(--bs-back);
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+
 }
 nav{
     font-family: 'Gotham Pro Medium';
     background-color: var(--bs-front);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
 }
+header{
 
+}
+main{
+    flex-grow: 1;
+}
+footer{
+    box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.25);
+    flex-shrink: 0;
+    font-family: 'Gotham Pro Medium';
+    color: var(--bs-back) ;
+    background-color: var(--bs-front);
+    padding: 20px 0px;
+}
 .btn-auth{
     background-color: var(--bs-back);
     border-radius: 15px;
@@ -35,4 +54,32 @@ nav{
     font-family: 'Gotham Pro Medium';
     color: var(--bs-back) ;
 }
-
+#block_one,#block_two,#block_three{
+    height: 1000px;
+    display: flex;
+    background: no-repeat;
+    background-size: cover;
+}
+#block_one{
+background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url("../img/1.jpg");
+}
+#block_one div div h1{
+    font-family: 'Gotham Pro Black';
+    font-size: 90px ;
+    color: var(--bs-back);
+}
+#block_one div div form{
+    font-family: 'Gotham Pro Medium';
+    font-size: 45px ;
+    color: var(--bs-back);
+}
+#block_one input,select{
+    border: 4px var(--bs-front) solid !important;
+    border-radius: 15px !important;
+}
+#block_two{
+    background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url("../img/2.jpg");
+}
+#block_three{
+    background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url("../img/3.jpg");
+}

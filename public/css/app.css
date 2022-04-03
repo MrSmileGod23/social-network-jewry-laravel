@@ -11291,11 +11291,28 @@ body {
   font-family: "Gotham Pro Light";
   background-color: var(--bs-back);
   overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 nav {
   font-family: "Gotham Pro Medium";
   background-color: var(--bs-front);
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+main {
+  flex-grow: 1;
+}
+
+footer {
+  box-shadow: 0px -4px 4px rgba(0, 0, 0, 0.25);
+  flex-shrink: 0;
+  font-family: "Gotham Pro Medium";
+  color: var(--bs-back);
+  background-color: var(--bs-front);
+  padding: 20px 0px;
 }
 
 .btn-auth {
@@ -11312,4 +11329,40 @@ nav {
   padding: 0px 53px 0px 53px;
   font-family: "Gotham Pro Medium";
   color: var(--bs-back);
+}
+
+#block_one, #block_two, #block_three {
+  height: 1000px;
+  display: flex;
+  background: no-repeat;
+  background-size: cover;
+}
+
+#block_one {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/images/1.jpg?b805333d66c18502f96147d691cabc38);
+}
+
+#block_one div div h1, #block_one div div .h1 {
+  font-family: "Gotham Pro Black";
+  font-size: 90px;
+  color: var(--bs-back);
+}
+
+#block_one div div form {
+  font-family: "Gotham Pro Medium";
+  font-size: 45px;
+  color: var(--bs-back);
+}
+
+#block_one input, select {
+  border: 4px var(--bs-front) solid !important;
+  border-radius: 15px !important;
+}
+
+#block_two {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/images/2.jpg?e7578d1876f1246a38db3643f2b3c5ae);
+}
+
+#block_three {
+  background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/images/3.jpg?b1bea7a16a808494ffc6c249e863fc2b);
 }

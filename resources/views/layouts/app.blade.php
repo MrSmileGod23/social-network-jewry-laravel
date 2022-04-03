@@ -22,10 +22,9 @@
 </head>
 <body>
         @include('inc.header')
-
-
+        <main>
             @yield('content')
-
+        </main>
         @include('inc.footer')
 
 </body>

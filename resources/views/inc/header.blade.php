@@ -1,5 +1,5 @@
 @section('header')
-    <div id="header" class="mb-5">
+    <div id="header" class="">
         <nav class="navbar navbar-expand-xxl navbar-light  pt-1 pb-1 shadowmy">
             <div class="container">
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="true" aria-label="{{ __('Toggle navigation') }}">
