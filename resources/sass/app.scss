@@ -50,7 +50,8 @@ footer{
 .btn-front{
     background-color: var(--bs-front);
     border-radius: 15px;
-    padding: 0px 53px 0px 53px;
+    max-width: 600px;
+    font-size: 30px;
     font-family: 'Gotham Pro Medium';
     color: var(--bs-back) ;
 }
@@ -63,6 +64,20 @@ footer{
 #block_one{
 background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url("../img/1.jpg");
 }
+#block_two,#block_three{
+    color: var(--bs-back);
+    font-family: 'Gotham Pro Black';
+}
+#block_two p{
+   font-size: 90px;
+}
+#block_two ul{
+    padding-left: 50px;
+}
+#block_two li,#block_three li{
+    font-size: 60px;
+}
+
 #block_one div div h1{
     font-family: 'Gotham Pro Black';
     font-size: 90px ;
@@ -82,4 +97,25 @@ background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),u
 }
 #block_three{
     background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url("../img/3.jpg");
+}
+
+@media screen and (max-width: 768px) {
+    #block_two p{
+        font-size: 75px;
+    }
+    #block_two li,#block_three li{
+        font-size: 45px;
+    }
+}
+@media screen and (max-width: 500px) {
+    #block_two p{
+        font-size: 60px;
+    }
+    #block_two,#block_three{
+        text-align: center;
+    }
+    #block_two li,#block_three li{
+        font-size: 40px;
+        list-style: none;
+    }
 }

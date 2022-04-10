@@ -1,8 +1,8 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/img/logo.png": "/img/logo.png",
     "/img/1.jpg": "/img/1.jpg",
     "/img/2.jpg": "/img/2.jpg",
-    "/img/3.jpg": "/img/3.jpg"
+    "/img/3.jpg": "/img/3.jpg",
+    "/img/logo.png": "/img/logo.png"
 }
