@@ -11323,13 +11323,38 @@ footer {
   color: var(--bs-front);
 }
 
-.btn-front {
+.btn-front, .btn-front-two {
   background-color: var(--bs-front);
   border-radius: 15px;
   max-width: 600px;
   font-size: 30px;
   font-family: "Gotham Pro Medium";
   color: var(--bs-back);
+}
+
+.btn-front-two {
+  max-width: unset;
+}
+
+.btn-group a {
+  background-color: var(--bs-front);
+  border-radius: 15px;
+  width: 300px;
+  font-size: 30px;
+  font-family: "Gotham Pro Medium";
+  color: var(--bs-back);
+  padding: 10px 24px;
+  margin: 5px;
+  cursor: pointer;
+  float: left;
+}
+
+.btn-group a:not(:last-child) {
+  border-right: none;
+}
+
+a:hover {
+  color: black;
 }
 
 #block_one, #block_two, #block_three {
@@ -11383,6 +11408,10 @@ footer {
 
 #block_three {
   background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url(/images/3.jpg?b1bea7a16a808494ffc6c249e863fc2b);
+}
+
+.active {
+  background-color: var(--bs-front) !important;
 }
 
 @media screen and (max-width: 768px) {
