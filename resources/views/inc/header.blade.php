@@ -13,7 +13,7 @@
                             <img src="/img/logo.png" alt="" width="50">
                            Jewry
                         </a>
-                        <a class="btn text-white fs-4" href="" role="button">Походы</a>
+                        <a class="btn text-white fs-4" href="{{ route('allHikes') }}" role="button">Походы</a>
                         <a class="btn text-white fs-4" href="{{ route('getAllArticle') }}" role="button">База знаний</a>
                     </ul>
 

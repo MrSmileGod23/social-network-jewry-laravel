@@ -24,17 +24,17 @@
         </div>
 
         <div class="container d-flex justify-content-center flex-column">
-            <div class="row p-3 ">
+            <div class="row ">
                 @foreach($article as $el)
-                    <div class="col d-flex justify-content-around flex-column">
+                    <div class="col p-0 d-flex justify-content-around flex-column">
                         <div class="col justify-content-center  d-flex">
                             <div class="card row mb-3 mt-5 flex-row shadowmy border-0" style="max-width: 100%;border-radius:20px;min-height:210px" >
                                 <div class="col-12 p-4 col-xl-8">
-                                    <div class="col-12  mb-3">
-                                    {{$el->name}}
+                                    <div class="col-12  mb-3 fw-bold fs-1">
+                                   {{$el->name}}
                                     </div>
-                                    <div class="col-12  mb-3">
-                                        Тема
+                                    <div class="col-12  mb-3 fw-bold fs-4">
+                                       Тема : {{ $el->article_theme->name }}
                                     </div>
                                     <div class="col-12 mb-3">
                                     {{ Str::limit($el->info, 500) }}

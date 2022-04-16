@@ -5,13 +5,11 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class   hike_type extends Model
+class Hike extends Model
 {
     use HasFactory;
 
-
-    public function Hike()
-    {
-        return $this->hasMany(Hike::class);
+    public function hike_type() {
+        return $this->belongsTo(hike_type::class, 'type_id');
     }
 }
