@@ -12,6 +12,7 @@ Route::get('/', [HomeController::class,'allData'])->name('allData');
 
 Route::get('/hikes', [HikesController::class,'allHikes'])->name('allHikes');
 
+Route::get('/hikes/{id}', [HikesController::class,'getHike'])->name('getHike');
 
 Route::get('/articles', [ArticlController::class,'allData'])->name('getAllArticle');
 

@@ -36,7 +36,7 @@
                                     {{ $el->hike_type->name }}
                                 </div>
                                 <div class="col-12  mb-3">
-                                   Сложность {{ $el->difficulty }} к.с.
+                                   Сложность: {{ $el->difficulty }} к.с.
                                 </div>
                                 <div class="col-12 mb-3">
                                     Участников
@@ -58,7 +58,7 @@
                                     {{ Str::limit($el->info, 500) }}
                                 </div>
                                 <div class="col-12 mb-3">
-                                    <a href="{{route('getArticle',[$el->id])}}" class="btn btn-front-two w-100 fs-1">Подробней</a>
+                                    <a href="{{route('getHike',[$el->id])}}" class="btn btn-front-two w-100 fs-1">Подробней</a>
                                 </div>
                             </div>
                         </div>

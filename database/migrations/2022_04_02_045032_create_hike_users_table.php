@@ -15,8 +15,8 @@ class CreateHikeUsersTable extends Migration
     {
         Schema::create('hike_users', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('hike_users')->nullable();
-            $table->foreign('hike_users')->references('id')->on('hikes');
+            $table->unsignedBigInteger('hike_id')->nullable();
+            $table->foreign('hike_id')->references('id')->on('hikes');
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

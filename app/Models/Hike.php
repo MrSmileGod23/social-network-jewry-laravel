@@ -12,4 +12,8 @@ class Hike extends Model
     public function hike_type() {
         return $this->belongsTo(hike_type::class, 'type_id');
     }
+
+    public function city() {
+        return $this->belongsTo(City::class, 'city_id');
+    }
 }

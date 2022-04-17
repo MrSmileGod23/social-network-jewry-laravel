@@ -5,13 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class City extends Model
+class Hike_reviews extends Model
 {
-    protected $table = 'cities';
     use HasFactory;
-
-    public function Hike()
-    {
-        return $this->hasMany(Hike::class);
-    }
 }
