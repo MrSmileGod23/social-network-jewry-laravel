@@ -58,8 +58,6 @@
   --bs-body-line-height: 1.5;
   --bs-body-color: #212529;
   --bs-body-bg: #fff;
-    --bs-back: #F0F0F0;
-    --bs-front: #3D9B34;
 }
 
 *,
@@ -4801,7 +4799,7 @@ textarea.form-control-lg {
 .page-link {
   position: relative;
   display: block;
-  color: var(--bs-front);
+  color: #0d6efd;
   text-decoration: none;
   background-color: #fff;
   border: 1px solid #dee2e6;
@@ -4814,16 +4812,16 @@ textarea.form-control-lg {
 }
 .page-link:hover {
   z-index: 2;
-  color: var(--bs-front);
+  color: #0a58ca;
   background-color: #e9ecef;
   border-color: #dee2e6;
 }
 .page-link:focus {
   z-index: 3;
-  color: var(--bs-front);
+  color: #0a58ca;
   background-color: #e9ecef;
   outline: 0;
-  box-shadow: 0 0 0 0.25rem rgba(13, 253,110, 0.25);
+  box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.25);
 }
 
 .page-item:not(:first-child) .page-link {
@@ -4832,8 +4830,8 @@ textarea.form-control-lg {
 .page-item.active .page-link {
   z-index: 3;
   color: #fff;
-  background-color:var(--bs-front);
-  border-color: var(--bs-front);
+  background-color: #0d6efd;
+  border-color: #0d6efd;
 }
 .page-item.disabled .page-link {
   color: #6c757d;
@@ -11418,6 +11416,24 @@ a:hover {
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
+}
+
+.page-link {
+  color: black !important;
+}
+
+.page-link:hover {
+  color: black !important;
+}
+
+.page-link:focus {
+  color: black !important;
+  box-shadow: 0 0 0 0.25rem rgba(13, 253, 63, 0.25) !important;
+}
+
+.page-item.active .page-link {
+  background-color: var(--bs-front) !important;
+  border-color: var(--bs-front) !important;
 }
 
 @media screen and (max-width: 768px) {

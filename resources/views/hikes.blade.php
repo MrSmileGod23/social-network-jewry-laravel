@@ -28,7 +28,7 @@
                         <div class="card row mb-3 mt-5 flex-row shadowmy border-0" style="max-width: 100%;border-radius:20px;min-height:210px" >
                             <div class="col-12 col-xl-4 p-0">
                                 <div class="col-12 h-100">
-                                    <img src="../img/1.jpg" alt="Картинка из похода" class="  hike_img"/>
+                                    <img src="../img/hikes/{{ $el->img }}" alt="Картинка из похода" class="  hike_img"/>
                                 </div>
                             </div>
                             <div class="col-12 p-4 col-xl-3 justify-content-between d-flex flex-column fs-4">

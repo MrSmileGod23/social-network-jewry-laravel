@@ -9,7 +9,7 @@
         <div class="card row mb-3 mt-5 flex-row shadowmy border-0" style="max-width: 100%;border-radius:20px;min-height:210px" >
             <div class="col-12 col-xl-6 p-0">
                 <div class="col-12 h-50">
-                    <img src="../img/1.jpg" alt="Картинка из похода" class="  hike_img"/>
+                    <img src="../img/hikes/{{ $hike->img }}" alt="Картинка из похода" class="  hike_img"/>
                 </div>
                 <div class="p-3 fw-bold fs-3">
                     <div class="col-12  mb-3">
@@ -72,7 +72,7 @@
 
             <div class="col-12 col-xl-3 d-flex p-0">
                 <div class="col-12">
-                    <img src="../img/1.jpg" alt="Картинка из похода" class="  hike_img"/>
+                    <img src="../img/users/{{$el->User->img}}" alt="Картинка аватара" class="  hike_img"/>
                 </div>
             </div>
             <div class="col-12 col-xl-3 p-2 d-flex flex-column justify-content-center align-items-center">

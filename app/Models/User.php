@@ -17,6 +17,9 @@ class User extends Authenticatable
     {
         return $this->hasMany(Hike_user::class);
     }
+    public function cities() {
+        return $this->belongsTo(City::class, 'city_id');
+    }
     /**
      * The attributes that are mass assignable.
      *

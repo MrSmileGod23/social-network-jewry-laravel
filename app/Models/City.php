@@ -14,4 +14,9 @@ class City extends Model
     {
         return $this->hasMany(Hike::class);
     }
+    public function city()
+    {
+        return $this->hasMany(City::class);
+    }
+
 }

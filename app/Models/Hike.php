@@ -16,4 +16,8 @@ class Hike extends Model
     public function city() {
         return $this->belongsTo(City::class, 'city_id');
     }
+
+    public function hikefinded() {
+        return $this->belongsTo(Hike_user::class, 'id');
+    }
 }
