@@ -68,7 +68,7 @@
             Участники
         </div>
         @foreach($users as $el)
-        <div class="card row mb-3 mt-3 flex-row shadowmy border-0" style="max-width: 100%;border-radius:20px;min-height:210px" >
+        <div class="card row mb-3 mt-3 flex-row shadowmy border-0 " style="max-width: 100%;border-radius:20px;min-height:210px" >
 
             <div class="col-12 col-xl-3 d-flex p-0">
                 <div class="col-12">
@@ -83,9 +83,9 @@
                     {{ $el->User->last_name }}
                 </div>
             </div>
-            <div class="col-12 col-xl-6 p-2 d-flex flex-column  align-items-center">
-                <div class="col-12 mb-3 fs-1 fw-bold text-end ">
-                   12
+            <div class="col-12 col-xl-6 p-2 d-flex flex-column justify-content-center  align-items-center">
+                <div class="col-12 mb-3 fs-1 fw-bold  text-center ">
+                   Роль
                 </div>
             </div>
         </div>

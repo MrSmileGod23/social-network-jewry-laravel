@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('title')
-    {{$data->first_name}}
+   {{$data->first_name}}
 @endsection
 
 @section('content')
@@ -19,30 +19,41 @@
                 <div class="fs-3 fw-bold">
                     {{ $data->first_name }}  {{ $data->last_name }}
                 </div>
-                <div>
-                    {{ $data->cities->name }}
-                </div>
+
+                @isset($data->cities->name)
+                    <div>
+                        {{ $data->cities->name }}
+                    </div>
+                @endisset
             </div>
             <div class="col-12 mb-3 ">
+                @isset($data->gender)
                 <div>
                     {{ $data->gender }}
                 </div>
+                @endisset
+                @isset($data->birth_date)
                 <div>
                     {{ $data->birth_date }}
                 </div>
+                    @endisset
             </div>
             <div class="col-12 mb-3 ">
+                @isset( $data->email )
                 <div>
                     {{ $data->email }}
                 </div>
+                @endisset
+                    @isset($data->telephone)
                 <div>
                     {{ $data->telephone }}
                 </div>
+                @endisset
             </div>
-            @if(  $data->telephone )
+            @if($data->is($current_user))
                 <div class="col-12 mb-3 ">
                     <div>
-                        <a href="" class="btn btn-front ">Изменить</a>
+                        <a href="{{route('editing',[$data->id])}}" class="btn btn-front ">Изменить</a>
                         <a class="btn btn-front " role="button" href="{{ route('logout') }}"   onclick="event.preventDefault();
                 document.getElementById('logout-form').submit();"> Выйти</a>
 
@@ -56,9 +67,11 @@
 
         </div>
         <div class="col-12 col-xl-6 p-2 d-flex flex-column  align-items-center">
+            @isset( $data->info)
             <div class="col-12 mb-3 fs-5 ">
                 {{ $data->info }}
             </div>
+            @endisset
         </div>
     </div>
 

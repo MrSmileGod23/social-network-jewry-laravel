@@ -24,3 +24,7 @@ Route::get('/articles/{id}', [ArticlController::class,'getArticle'])->name('getA
 Auth::routes();
 
 Route::get('/profile/{id}',[UserController::class,'user'])->name('user')->middleware('auth');
+
+Route::get('/profile/{id}/editing',[UserController::class,'editing'])->name('editing')->middleware('auth');
+
+Route::post('/profile/{id}',[UserController::class,'updateUser'])->name('updateUser')->middleware('auth');

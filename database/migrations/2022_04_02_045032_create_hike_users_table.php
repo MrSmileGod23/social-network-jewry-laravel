@@ -19,6 +19,7 @@ class CreateHikeUsersTable extends Migration
             $table->foreign('hike_id')->references('id')->on('hikes');
             $table->unsignedBigInteger('user_id')->nullable();
             $table->foreign('user_id')->references('id')->on('users');
+            $table->string('role');
             $table->timestamps();
         });
     }
