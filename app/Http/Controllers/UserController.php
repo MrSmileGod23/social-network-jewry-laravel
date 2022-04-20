@@ -19,11 +19,11 @@ class UserController extends Controller
 
     public function user($id,Request $request)
     {
-        $data= User::all()->find($id);
+        $user= User::find($id);
         $hike= Hike_user::where('user_id',$id)->paginate(2);
         $current_user = $request->user();
         return view('profile',[
-            'data' => $data,
+            'user' => $user,
             'hike' => $hike,
             'current_user' => $current_user
         ]);
@@ -32,26 +32,27 @@ class UserController extends Controller
 
     public function editing($id,Request $request)
     {
-        $data= User::all()->find($id);
+        $user= User::find($id)->first();
         $current_user = $request->user();
         $city = City::get();
         return view('profile-editing',[
             'city' => $city,
-            'data' => $data,
+            'user' => $user,
             'current_user' => $current_user
         ]);
 
     }
 
-    public function updateUser(Request $request, User $User,$id){
-
-        $User->where('id',$id)->update(['first_name'=>$request->first_name]);
-        $User->where('id',$id)->update(['last_name'=>$request->last_name]);
-        $User->where('id',$id)->update(['city_id'=>$request->city]);
-        $User->where('id',$id)->update(['birth_date'=>$request->birth_date]);
-        $User->where('id',$id)->update(['info'=>$request->info]);
-        $User->where('id',$id)->update(['telephone'=>$request->telephone]);
-        return redirect()->action([UserController::class,'user'], ['id' => $id ]);
+    public function updateUser(Request $request, User $id){
+        $id->update([
+            'first_name'=>$request->first_name,
+            'last_name'=>$request->last_name,
+            'city_id'=>$request->city,
+            'birth_date'=>$request->birth_date,
+            'info'=>$request->info,
+            'telephone'=>$request->telephone
+        ]);
+        return redirect()->action([UserController::class,'user'], [$id]);
     }
 
 }

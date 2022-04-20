@@ -39,4 +39,22 @@ class ArticlController extends Controller
         ]);
 
     }
+    public function createArticle()
+    {
+        $themes = Article_theme::get();
+        return view('createArticle',[
+            'themes' => $themes
+        ]);
+    }
+    public function newArticle(Request $request)
+    {
+        $current_user = $request->user();
+        Articl::insert(array(
+            'theme_id'  =>$request->theme_id,
+            'name' =>$request->name,
+            'info'   =>$request->info
+        ));
+        return redirect()->action([UserController::class,'user'], ['id' => $current_user ]);
+
+    }
 }

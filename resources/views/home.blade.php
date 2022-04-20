@@ -16,16 +16,16 @@
                 <form>
                     <div class="row">
                         <div class="col-12  col-sm-6  col-xl-3 mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Дата начала</label>
+                            <label for="date" class="form-label">Дата начала</label>
                             <input type="date"  class="form-control" id="datePickerId" aria-describedby="emailHelp">
                         </div>
                         <div class="col-12  col-sm-6 col-xl-3 mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Дата конца</label>
+                            <label for="date" class="form-label">Дата конца</label>
                             <input type="date" class="form-control" id="datePickerId2">
                         </div>
                         <div class="col-12 col-xl-6 mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Город</label>
-                            <select  id="gender" class="form-control @error('gender') is-invalid @enderror" name="gender" value="{{ old('gender') }}" required autocomplete="gender" autofocus>
+                            <label for="city" class="form-label">Город</label>
+                            <select  id="city" class="form-control" name="city" >
                                 @foreach($city as $el)
                                     <option value={{$el->name}}>{{$el->name}}</option>
                                 @endforeach
@@ -34,22 +34,22 @@
                     </div>
                     <div class="row">
                         <div class="col-12 col-lg-6 mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Тип похода</label>
-                            <select  id="gender" class="form-control @error('gender') is-invalid @enderror" name="gender" value="{{ old('gender') }}" required autocomplete="gender" autofocus>
+                            <label for="type" class="form-label">Тип похода</label>
+                            <select  id="type" class="form-control" name="type">
                                 @foreach($type as $el)
                                     <option value={{$el->name}}>{{$el->name}}</option>
                                 @endforeach
                             </select>
                         </div>
                         <div class="col-12 col-lg-6 mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Сложность</label>
-                            <select  id="gender" class="form-control @error('gender') is-invalid @enderror" name="gender" value="{{ old('gender') }}" required autocomplete="gender" autofocus>
-                                <option value="1 к.с.">1 к.с.</option>
-                                <option value="2 к.с.">2 к.с.</option>
-                                <option value="3 к.с.">3 к.с.</option>
-                                <option value="4 к.с.">4 к.с.</option>
-                                <option value="5 к.с.">5 к.с.</option>
-                                <option value="6 к.с.">6 к.с.</option>
+                            <label for="diffictly" class="form-label">Сложность</label>
+                            <select  id="diffictly" class="form-control" name="diffictly">
+                                <option value="1">1 к.с.</option>
+                                <option value="2">2 к.с.</option>
+                                <option value="3">3 к.с.</option>
+                                <option value="4">4 к.с.</option>
+                                <option value="5">5 к.с.</option>
+                                <option value="6">6 к.с.</option>
                             </select>
                         </div>
                     </div>
@@ -65,7 +65,7 @@
     <div  id="block_two">
         <div class="container d-flex justify-content-start flex-column align-self-center ">
             <p>Типы походов</p>
-            <ul>
+            <ul class="  d-flex flex-column p-0 m-0">
                 @foreach($type as $el)
                     <li value={{$el->name}}>{{$el->name}}</li>
                 @endforeach

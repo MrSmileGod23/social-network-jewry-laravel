@@ -24,11 +24,11 @@ class CreateHikesTable extends Migration
             $table->date('startDate');
             $table->date('endDate');
             $table->text('info');
-            $table->text('food');
-            $table->text('equipment');
+            $table->text('food')->nullable();
+            $table->text('equipment')->nullable();
             $table->text('route');
-            $table->float('mileage');
-            $table->text('img');
+            $table->float('mileage')->nullable();
+            $table->text('img')->nullable();
             $table->timestamps();
         });
     }

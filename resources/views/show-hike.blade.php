@@ -6,10 +6,10 @@
 
 @section('content')
     <div class="container">
-        <div class="card row mb-3 mt-5 flex-row shadowmy border-0" style="max-width: 100%;border-radius:20px;min-height:210px" >
+        <div class="card flex-xl-row flex-column   mb-3 mt-5  shadowmy border-0 h-auto" style="max-width: 100%;border-radius:20px;" >
             <div class="col-12 col-xl-6 p-0">
                 <div class="col-12 h-50">
-                    <img src="../img/hikes/{{ $hike->img }}" alt="Картинка из похода" class="  hike_img"/>
+                    <img src="../../img/hikes/{{ $hike->img }}" alt="Картинка из похода" class="hike_img" style="min-height: 530px"/>
                 </div>
                 <div class="p-3 fw-bold fs-3">
                     <div class="col-12  mb-3">
@@ -42,12 +42,16 @@
                         </div>
                     </div>
                     <div class="col-12 mb-3">
-                        <a href="{{route('getHike',[$hike->id])}}" class="btn btn-front-two w-100 fs-1">Присоединиться</a>
+                            @if(\Illuminate\Support\Facades\Auth::check())
+                            <a href="{{route('getHike',[$hike->id])}}" class="btn btn-front-two w-100 fs-1">Присоединиться</a>
+                           @else
+                                Для участия нужно авторизироваться
+                        @endif
                     </div>
                 </div>
 
             </div>
-            <div class="col-12 col-xl-6 p-2 d-flex flex-column  align-items-center">
+            <div class="col-12 col-xl-6 p-2 d-flex flex-column  align-items-center ">
                 <div class="col-12 mb-3 fs-1 fw-bold text-center ">
                     {{ $hike->name }}
                 </div>
@@ -68,21 +72,21 @@
             Участники
         </div>
         @foreach($users as $el)
-        <div class="card row mb-3 mt-3 flex-row shadowmy border-0 " style="max-width: 100%;border-radius:20px;min-height:210px" >
+        <div class="card flex-xl-row flex-column mb-3 mt-3 flex-row shadowmy border-0 " style="max-width: 100%;border-radius:20px;min-height:210px" >
 
             <div class="col-12 col-xl-3 d-flex p-0">
                 <div class="col-12">
                     <img src="../img/users/{{$el->User->img}}" alt="Картинка аватара" class="  hike_img"/>
                 </div>
             </div>
-            <div class="col-12 col-xl-3 p-2 d-flex flex-column justify-content-center align-items-center">
-                <div class="col-12 mb-3 fs-1 fw-bold text-center ">
-                    {{ $el->User->first_name }}
+                <div class="col-12 col-xl-3 p-2 d-flex flex-column justify-content-center align-items-center">
+                    <div class="col-12 mb-3 fs-1 fw-bold text-center ">
+                       <a href="{{ route('user',$el->User->id)}}" class="text-decoration-none text-black"> {{ $el->User->first_name }}</a>
+                    </div>
+                    <div class="col-12 mb-3 fs-1 fw-bold text-center ">
+                        <a href="{{ route('user',$el->User->id)}}" class="text-decoration-none text-black"> {{ $el->User->last_name }}</a>
+                    </div>
                 </div>
-                <div class="col-12 mb-3 fs-1 fw-bold text-center ">
-                    {{ $el->User->last_name }}
-                </div>
-            </div>
             <div class="col-12 col-xl-6 p-2 d-flex flex-column justify-content-center  align-items-center">
                 <div class="col-12 mb-3 fs-1 fw-bold  text-center ">
                    Роль

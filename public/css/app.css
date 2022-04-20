@@ -11436,6 +11436,15 @@ a:hover {
   border-color: var(--bs-front) !important;
 }
 
+.card-show-hike {
+  flex-direction: row;
+}
+
+@media screen and (max-width: 1200px) {
+  .card-show-hike {
+    flex-direction: column;
+  }
+}
 @media screen and (max-width: 768px) {
   #block_two p {
     font-size: 75px;
@@ -11454,8 +11463,12 @@ a:hover {
     text-align: center;
   }
 
+  #block_two ul {
+    align-items: center;
+  }
+
   #block_two li, #block_three li {
-    font-size: 40px;
+    font-size: 30px;
     list-style: none;
   }
 }
