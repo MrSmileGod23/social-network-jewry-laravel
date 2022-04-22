@@ -7,8 +7,12 @@
 @section('content')
 
     <div class="container">
-        <form class="form-control mt-5" action="/hikes/create/" method="POST">
+        <form class="form-control mt-5" action="/hikes/create/" method="POST" enctype="multipart/form-data">
             @csrf
+            <div class="form-group">
+                <label for="img">Фотография похода</label>
+                <input type="file" name="img" value="" id="img" class="form-control" >
+            </div>
             <div class="form-group">
                 <label for="name">Название похода</label>
                 <input type="text" name="name"  class="form-control" id="name" aria-describedby="nameHelp" required>

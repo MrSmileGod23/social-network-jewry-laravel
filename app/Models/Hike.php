@@ -17,7 +17,23 @@ class Hike extends Model
         return $this->belongsTo(City::class, 'city_id');
     }
 
-    public function hikefinded() {
-        return $this->belongsTo(Hike_user::class, 'id');
+    public function users() {
+        return $this->hasMany(Hike_user::class, 'id');
     }
+
+    protected $fillable = [
+        'id',
+        'type_id',
+        'city_id',
+        'name',
+        'difficulty',
+        'startDate',
+        'endDate',
+        'info',
+        'food',
+        'equipment',
+        'route',
+        'mileage',
+        'img'
+    ];
 }

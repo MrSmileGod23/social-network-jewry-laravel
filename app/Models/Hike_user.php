@@ -14,7 +14,14 @@ class Hike_user extends Model
     public function user() {
         return $this->belongsTo(User::class, 'user_id');
     }
-    public function hikefind() {
+    public function hike() {
         return $this->belongsTo(Hike::class, 'hike_id');
     }
+
+    protected $fillable = [
+        'id',
+        'hike_id',
+        'user_id',
+        'role'
+    ];
 }

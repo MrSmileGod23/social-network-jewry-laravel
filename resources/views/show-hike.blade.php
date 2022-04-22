@@ -9,9 +9,9 @@
         <div class="card flex-xl-row flex-column   mb-3 mt-5  shadowmy border-0 h-auto" style="max-width: 100%;border-radius:20px;" >
             <div class="col-12 col-xl-6 p-0">
                 <div class="col-12 h-50">
-                    <img src="../../img/hikes/{{ $hike->img }}" alt="Картинка из похода" class="hike_img" style="min-height: 530px"/>
+                    <img src="../../storage/img/hikes/{{$hike->img}}" alt="Картинка из похода" class="hike_img" style="min-height: 530px"/>
                 </div>
-                <div class="p-3 fw-bold fs-3">
+                <div class="p-4 fw-bold fs-3">
                     <div class="col-12  mb-3">
                         @if($ldate>$hike->endDate)
                             Статус: Закончено
@@ -76,7 +76,7 @@
 
             <div class="col-12 col-xl-3 d-flex p-0">
                 <div class="col-12">
-                    <img src="../img/users/{{$el->User->img}}" alt="Картинка аватара" class="  hike_img"/>
+                    <img src="../../storage/img/users/avatars/{{$el->User->img}}" alt="Картинка аватара" class="profile_hike_img"/>
                 </div>
             </div>
                 <div class="col-12 col-xl-3 p-2 d-flex flex-column justify-content-center align-items-center">

@@ -44,15 +44,26 @@ class UserController extends Controller
     }
 
     public function updateUser(Request $request, User $id){
+
+
+        if ($request->hasFile('img')) {
+            $destinationPath = storage_path('app/public/img/users/avatars/');
+            $fileName = $id->id.'.jpg';
+            $request->file('img')->move($destinationPath, $fileName);
+            $id->update([
+                'img' =>$fileName
+            ]);
+        }
         $id->update([
             'first_name'=>$request->first_name,
             'last_name'=>$request->last_name,
             'city_id'=>$request->city,
+
             'birth_date'=>$request->birth_date,
             'info'=>$request->info,
             'telephone'=>$request->telephone
         ]);
-        return redirect()->action([UserController::class,'user'], [$id]);
+        return redirect()->action([UserController::class,'user'], [$id->id]);
     }
 
 }

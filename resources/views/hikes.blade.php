@@ -21,14 +21,14 @@
         </div>
     </div>
     <div class="container d-flex justify-content-center flex-column">
-        <div class="row ">
+        <div class="row  ">
             @foreach($hike as $el)
-                <div class="col p-0 d-flex justify-content-around flex-column">
+                <div class="col p-0  d-flex justify-content-around flex-column">
                     <div class="col justify-content-center  d-flex">
-                        <div class="card row mb-3 mt-5 flex-row shadowmy border-0" style="max-width: 100%;border-radius:20px;min-height:210px" >
+                        <div class="card row mb-3 mt-5 w-100 flex-row shadowmy border-0" style="border-radius:20px;min-height:210px" >
                             <div class="col-12 col-xl-4 p-0">
                                 <div class="col-12 h-100">
-                                    <img src="../img/hikes/{{ $el->img }}" alt="Картинка из похода" class="  hike_img"/>
+                                    <img src="../storage/img/hikes/{{$el->img}}" alt="Картинка из похода" class="  hike_img"/>
                                 </div>
                             </div>
                             <div class="col-12 p-4 col-xl-3 justify-content-between d-flex flex-column fs-4">

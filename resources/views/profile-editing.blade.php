@@ -7,15 +7,19 @@
 @section('content')
 
 <div class="container">
-    <form class="form-control mt-5" action="/profile/{{$user}}" method="POST">
+    <form class="form-control mt-5" action="{{route('updateUser',[$user->id])}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
+            <label for="img">Фотография профиля</label>
+            <input type="file" name="img" value="{{ $user->img }}" id="img" class="form-control" >
+        </div>
+        <div class="form-group">
             <label for="first_name">Имя</label>
-            <input type="text" name="first_name" value={{$user->first_name}} class="form-control" id="first_name" aria-describedby="nameHelp" placeholder="Введите имя">
+            <input type="text" name="first_name" value="{{$user->first_name}}" class="form-control" id="first_name" aria-describedby="nameHelp" placeholder="Введите имя" >
         </div>
         <div class="form-group mt-3">
             <label for="last_name">Фамилия</label>
-            <input type="text" name="last_name" value={{$user->last_name}} class="form-control" id="last_name" placeholder="Введите фамилию">
+            <input type="text" name="last_name"  value="{{$user->last_name}}"  class="form-control" id="last_name" placeholder="Введите фамилию">
         </div>
         <div class="form-group mt-3">
             <select name="city" class="form-control"  >
@@ -29,7 +33,7 @@
         </div>
         <div class="form-group mt-3">
             <label for="birth_date">Дата рождения</label>
-            <input type="date" name="birth_date" value={{$user->birth_date}} class="form-control" id="birth_date" >
+            <input type="date" name="birth_date" value="{{$user->birth_date}}" class="form-control" id="birth_date" >
         </div>
         <div class="form-group mt-3">
             <label for="info">О себе</label>
@@ -37,7 +41,7 @@
         </div>
         <div class="form-group mt-3">
             <label for="telephone">Телефон</label>
-            <input type="telephone" name="telephone" min="11" max="11" value={{$user->telephone}} class="form-control" id="telephone" >
+            <input type="telephone" name="telephone" min="11" max="11" value="{{$user->telephone}}" class="form-control" id="telephone" >
         </div>
         <button type="submit" class="btn btn-front mt-3">Submit</button>
     </form>

@@ -11,7 +11,7 @@
 
         <div class="col-12 col-xl-3 d-flex p-0">
             <div class="col-12">
-                <img src="../img/users/{{$user->img}}" alt="Картинка аватара" class="  hike_img"/>
+                <img src="../storage/img/users/avatars/{{$user->img}}" alt="Картинка аватара" class="profile_img"/>
             </div>
         </div>
         <div class="col-12 col-xl-3 p-2 d-flex fs-4 flex-column justify-content-between align-items-center">
@@ -90,6 +90,7 @@
 
         @endif
     </div>
+    @if($user->is($current_user))
 <div class="text-center fs-1 fw-bold">
     Мои походы
 </div>
@@ -97,43 +98,44 @@
         <div class="card card-show-hike  mb-3 mt-5  shadowmy border-0 h-auto" style="max-width: 100%;border-radius:20px;" >
             <div class="col-12 col-xl-4 p-0">
                 <div class="col-12 h-100">
-                    <img src="../img/hikes/{{ $el->hikefind->img }}" alt="Картинка из похода" class="  hike_img"/>
+                    <img src="../storage/img/hikes/{{$el->hike->img}}" alt="Картинка из похода" class="  hike_img"/>
                 </div>
             </div>
             <div class="col-12 p-2 col-xl-3 justify-content-between d-flex flex-column fs-4">
                 <div class="col-12  mb-3">
-                    {{ $el->hikefind->hike_type->name }}
+                    {{ $el->hike->hike_type->name }}
                 </div>
                 <div class="col-12  mb-3">
-                    Сложность: {{ $el->hikefind->difficulty }} к.с.
+                    Сложность: {{ $el->hike->difficulty }} к.с.
                 </div>
                 <div class="col-12 mb-3">
                     Участников
                 </div>
                 <div class="col-12 mb-1 flex-row  d-flex flex-wrap  hike_date">
                     <div>
-                        C {{ $el->hikefind->startDate }} &nbsp;
+                        C {{ $el->hike->startDate }} &nbsp;
                     </div>
                     <div>
-                        по &nbsp;{{ $el->hikefind->endDate }}
+                        по &nbsp;{{ $el->hike->endDate }}
                     </div>
                 </div>
             </div>
             <div class="col-12 col-xl-5 p-2 d-flex flex-column  align-items-center">
                 <div class="col-12 mb-3 fs-1 fw-bold ">
-                    {{ Str::limit($el->hikefind->name, 44) }}
+                    {{ Str::limit($el->hike->name, 44) }}
                 </div>
                 <div class="col-12 mb-3">
-                    {{ Str::limit($el->hikefind->info, 200) }}
+                    {{ Str::limit($el->hike->info, 200) }}
                 </div>
                 <div class="col-12 mb-3">
-                    <a href="{{route('getHike',[$el->hikefind->id])}}" class="btn btn-front-two w-100 fs-1">Подробней</a>
+                    <a href="{{route('getHike',[$el->hike->id])}}" class="btn btn-front-two w-100 fs-1">Подробней</a>
                 </div>
             </div>
         </div>
 
     @endforeach
     <div class="text-center justify-content-center w-100 d-flex"> {{$hike->links('vendor.pagination.bootstrap-4')}}</div>
+    @endif
 </div>
 
 @endsection

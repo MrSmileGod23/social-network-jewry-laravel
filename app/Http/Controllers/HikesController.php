@@ -49,7 +49,9 @@ class HikesController extends Controller
     public function newHike(Request $request)
     {
         $current_user = $request->user();
-        Hike::insert(array(
+
+
+        $hike=Hike::create([
             'type_id'  =>$request->type_id,
             'city_id' =>$request->city_id,
             'name'   =>$request->name,
@@ -61,7 +63,22 @@ class HikesController extends Controller
             'equipment'   =>$request->equipment,
             'route'   =>$request->route,
             'mileage'   =>$request->mileage
-        ));
+        ]);
+        if ($request->hasFile('img')) {
+            $destinationPath = storage_path('app/public/img/hikes/');
+            $fileName = $hike->id.'.jpg';
+            $request->file('img')->move($destinationPath, $fileName);
+            $hike->img = $fileName;
+        }
+        $hike->save();
+        $hike->users()->create([
+           'hike_id'=>$hike->id,
+            'user_id'=>$current_user->id,
+            'role'=>'Создатель'
+        ]);
+
+
+
         return redirect()->action([UserController::class,'user'], ['id' => $current_user ]);
 
     }
