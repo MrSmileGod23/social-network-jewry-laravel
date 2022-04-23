@@ -84,7 +84,7 @@ a:hover{
     background-size: cover;
 }
 #block_one{
-background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url("../img/1.jpg");
+background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),url("../img/1.jpg");
 }
 #block_two,#block_three{
     color: var(--bs-back);
@@ -115,10 +115,10 @@ background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),u
     border-radius: 15px !important;
 }
 #block_two{
-    background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url("../img/2.jpg");
+    background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),url("../img/2.jpg");
 }
 #block_three{
-    background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url("../img/3.jpg");
+    background-image:linear-gradient(0deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)),url("../img/3.jpg");
 }
 .hike_img,.profile_img,.profile_hike_img{
     border-radius: 15px 0px 0px 15px ;
