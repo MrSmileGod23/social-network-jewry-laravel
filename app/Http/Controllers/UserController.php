@@ -30,15 +30,13 @@ class UserController extends Controller
 
     }
 
-    public function editing($id,Request $request)
+    public function editing(Request $request)
     {
-        $user= User::find($id)->first();
         $current_user = $request->user();
         $city = City::get();
         return view('profile-editing',[
             'city' => $city,
-            'user' => $user,
-            'current_user' => $current_user
+            'user' => $current_user
         ]);
 
     }
