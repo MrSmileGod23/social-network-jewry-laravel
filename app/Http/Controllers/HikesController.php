@@ -69,8 +69,9 @@ class HikesController extends Controller
             $fileName = $hike->id.'.jpg';
             $request->file('img')->move($destinationPath, $fileName);
             $hike->img = $fileName;
+            $hike->save();
         }
-        $hike->save();
+
         $hike->users()->create([
            'hike_id'=>$hike->id,
             'user_id'=>$current_user->id,
