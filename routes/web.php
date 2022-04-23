@@ -29,7 +29,7 @@ Route::middleware('auth')->group(function () {
     Route::post('/profile/{id}',[UserController::class,'updateUser'])->name('updateUser');
 
     Route::get('/hikes/create/',[HikesController::class,'createHike'])->name('createHike');
-    Route::post('/hikes/create/',[HikesController::class,'newHike'])->name('createHike');
+    Route::post('/hikes/create/',[HikesController::class,'newHike'])->name('newHike');
 
     Route::get('/articles/create/',[ArticlController::class,'createArticle'])->name('createArticle');
     Route::post('/articles/create/',[ArticlController::class,'newArticle'])->name('createArticle');

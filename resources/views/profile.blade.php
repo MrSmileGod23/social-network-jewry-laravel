@@ -84,7 +84,7 @@
                 <a href="{{route('createArticle')}}" class="btn btn-front-two w-100">Создать статью</a>
             </div>
             <div class="col-12 col-xl-4 p-0 mb-2">
-                <a href="{{route('createHike',$user)}}" class="btn btn-front-two w-100 ">Создать поход</a>
+                <a href="{{route('createHike')}}" class="btn btn-front-two w-100 ">Создать поход</a>
             </div>
 
 
