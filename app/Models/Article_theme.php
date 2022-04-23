@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class Article_theme extends Model
 {
-    protected $table = 'Article_themes';
     use HasFactory;
 
     public function Articl()
