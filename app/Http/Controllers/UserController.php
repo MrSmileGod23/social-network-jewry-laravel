@@ -6,10 +6,10 @@ namespace App\Http\Controllers;
 use App\Models\City;
 use App\Models\Hike;
 use App\Models\Hike_user;
-use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
@@ -41,8 +41,14 @@ class UserController extends Controller
 
     }
 
+
+
     public function updateUser(Request $request, User $id){
 
+        $request->validate([
+            'first_name' => 'regex:/^[a-zA-Zа-яА-Я]+$/i',
+            'last_name' => 'regex:/^[a-zA-Zа-яА-Я]+$/i'
+        ]);
 
         if ($request->hasFile('img')) {
             $destinationPath = storage_path('app/public/img/users/avatars/');

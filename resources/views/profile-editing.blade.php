@@ -15,11 +15,21 @@
         </div>
         <div class="form-group">
             <label for="first_name">Имя</label>
-            <input type="text" name="first_name" value="{{$user->first_name}}" class="form-control" id="first_name" aria-describedby="nameHelp" placeholder="Введите имя" >
+            <input type="text" name="first_name" value="{{$user->first_name}}" class="form-control @error('first_name') is-invalid @enderror" id="first_name" aria-describedby="nameHelp" placeholder="Введите имя" >
+            @error('first_name')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
         </div>
         <div class="form-group mt-3">
             <label for="last_name">Фамилия</label>
-            <input type="text" name="last_name"  value="{{$user->last_name}}"  class="form-control" id="last_name" placeholder="Введите фамилию">
+            <input type="text" name="last_name"  value="{{$user->last_name}}"  class="form-control @error('last_name') is-invalid @enderror" id="last_name" placeholder="Введите фамилию">
+            @error('last_name')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
         </div>
         <div class="form-group mt-3">
             <select name="city" class="form-control"  >
@@ -41,7 +51,12 @@
         </div>
         <div class="form-group mt-3">
             <label for="telephone">Телефон</label>
-            <input type="telephone" name="telephone" min="11" max="11" value="{{$user->telephone}}" class="form-control" id="telephone" >
+            <input type="telephone" name="telephone" min="11" max="11" value="{{$user->telephone}}" class="form-control @error('telephone') is-invalid @enderror" id="telephone" >
+            @error('telephone')
+            <span class="invalid-feedback" role="alert">
+                <strong>{{ $message }}</strong>
+            </span>
+            @enderror
         </div>
         <button type="submit" class="btn btn-front mt-3">Обновить</button>
     </form>
