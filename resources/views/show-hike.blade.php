@@ -49,7 +49,6 @@
                         @endif
                     </div>
                 </div>
-
             </div>
             <div class="col-12 col-xl-6 p-2 d-flex flex-column  align-items-center ">
                 <div class="col-12 mb-3 fs-1 fw-bold text-center ">
@@ -89,7 +88,7 @@
                 </div>
             <div class="col-12 col-xl-6 p-2 d-flex flex-column justify-content-center  align-items-center">
                 <div class="col-12 mb-3 fs-1 fw-bold  text-center ">
-                   Роль
+                    {{ $el->role }}
                 </div>
             </div>
         </div>
