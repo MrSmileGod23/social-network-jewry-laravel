@@ -69,7 +69,7 @@
                 <label for="mileage">Километраж</label>
                 <input type="number"  name="mileage" min="0" class="form-control" id="mileage">
             </div>
-            <button type="submit" class="btn btn-front mt-3">Submit</button>
+            <button type="submit" class="btn btn-front mt-3">Создать</button>
         </form>
     </div>
 @endsection

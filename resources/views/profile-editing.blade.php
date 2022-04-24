@@ -43,7 +43,7 @@
             <label for="telephone">Телефон</label>
             <input type="telephone" name="telephone" min="11" max="11" value="{{$user->telephone}}" class="form-control" id="telephone" >
         </div>
-        <button type="submit" class="btn btn-front mt-3">Submit</button>
+        <button type="submit" class="btn btn-front mt-3">Обновить</button>
     </form>
 </div>
 @endsection
