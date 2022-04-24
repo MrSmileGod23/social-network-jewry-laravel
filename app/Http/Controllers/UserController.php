@@ -46,8 +46,8 @@ class UserController extends Controller
     public function updateUser(Request $request, User $id){
 
         $request->validate([
-            'first_name' => 'regex:/^[a-zA-Zа-яА-Я]+$/i',
-            'last_name' => 'regex:/^[a-zA-Zа-яА-Я]+$/i'
+            'first_name' => 'regex:/^[а-яА-ЯA-Za-z\- ,]+$/u',
+            'last_name' => 'regex:/^[а-яА-ЯA-Za-z\- ,]+$/u'
         ]);
 
         if ($request->hasFile('img')) {
