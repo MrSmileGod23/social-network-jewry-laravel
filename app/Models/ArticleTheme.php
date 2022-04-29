@@ -5,13 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Article_theme extends Model
+class ArticleTheme extends Model
 {
     use HasFactory;
 
-    public function Articl()
+    public function Article()
     {
-        return $this->hasMany(Articl::class);
+        return $this->hasMany(Article::class);
     }
     protected $fillable =['name'];
 }

@@ -7,7 +7,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class City extends Model
 {
-    protected $table = 'cities';
     use HasFactory;
 
     public function Hike()

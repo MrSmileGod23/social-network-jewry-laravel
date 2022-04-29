@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Hike_reviews extends Model
+class HikeReview extends Model
 {
     use HasFactory;
 }

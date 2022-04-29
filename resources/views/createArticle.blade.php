@@ -7,7 +7,7 @@
 @section('content')
 
     <div class="container">
-        <form class="form-control mt-5" action="/articles/create" method="POST">
+        <form class="form-control mt-5" action="{{route('articles.create')}}" method="POST">
             @csrf
             <div class="form-group">
                 <label for="name">Название статьи</label>

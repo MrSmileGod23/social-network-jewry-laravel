@@ -78,13 +78,13 @@
     <div class="row m-0 mb-3 mt-5 shadowmy border-0 d-flex justify-content-between" style="max-width: 100%;border-radius:20px;" >
         @if($user->is($current_user))
             <div class="col-12 col-xl-4 p-0 mb-2" >
-                    <a href="{{route('editing',$user)}}" class="btn btn-front-two w-100 ">Изменить профиль</a>
+                    <a href="{{route('user.edit',$user)}}" class="btn btn-front-two w-100 ">Изменить профиль</a>
             </div>
             <div class="col-12 col-xl-3 p-0 mb-2">
-                <a href="{{route('createArticle')}}" class="btn btn-front-two w-100">Создать статью</a>
+                <a href="{{route('articles.new')}}" class="btn btn-front-two w-100">Создать статью</a>
             </div>
             <div class="col-12 col-xl-3 p-0 mb-2">
-                <a href="{{route('createHike')}}" class="btn btn-front-two w-100 ">Создать поход</a>
+                <a href="{{route('hikes.new')}}" class="btn btn-front-two w-100 ">Создать поход</a>
             </div>
 
 

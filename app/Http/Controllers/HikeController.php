@@ -2,32 +2,32 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Article_theme;
+use App\Models\ArticleTheme;
 use App\Models\City;
 use App\Models\Hike;
-use App\Models\Hike_reviews;
-use App\Models\hike_type;
-use App\Models\Hike_user;
+use App\Models\HikeReview;
+use App\Models\HikeType;
+use App\Models\HikeUser;
 use Illuminate\Http\Request;
 
-class HikesController extends Controller
+class HikeController extends Controller
 {
-    public function allHikes ()
+    public function index ()
     {
         $hike= Hike::paginate(4);
-        $themes = Article_theme::get();
+        $themes = ArticleTheme::get();
         return view('hikes',[
             'hike' => $hike,
             'themes' => $themes
         ]);
     }
 
-    public function getHike ($id)
+    public function show ($id)
     {
         $hike= Hike::where('id',$id)->first();
-        $themes = Article_theme::get();
-        $users = Hike_user::where('hike_id',$id)->get();
-        $reviews = Hike_reviews::get();
+        $themes = ArticleTheme::get();
+        $users = HikeUser::where('hike_id',$id)->get();
+        $reviews = HikeReview::get();
         $ldate = date('Y-m-d');
         return view('show-hike',[
             'hike' => $hike,
@@ -37,16 +37,16 @@ class HikesController extends Controller
             'ldate' => $ldate
         ]);
     }
-    public function createHike()
+    public function new()
     {
         $city = City::get();
-        $type = hike_type::get();
+        $type = HikeType::get();
         return view('createHike',[
             'city' => $city,
             'type' => $type,
         ]);
     }
-    public function newHike(Request $request)
+    public function create(Request $request)
     {
         $current_user = $request->user();
 

@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 
 use App\Models\City;
-use App\Models\hike_type;
+use App\Models\HikeType;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -21,10 +21,10 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function allData()
+    public function index()
     {
         $city = City::get();
-        $type = hike_type::get();
+        $type = HikeType::get();
         return view('home',[
             'city' => $city,
             'type' => $type

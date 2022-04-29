@@ -9,12 +9,12 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto align-items-start  align-items-xxl-center">
-                        <a class="navbar-brand fs-4 text-white" href="{{ route('allData') }}">
+                        <a class="navbar-brand fs-4 text-white" href="{{ route('home.index') }}">
                             <img src="/img/logo.png" alt="" width="50">
                            Jewry
                         </a>
-                        <a class="btn text-white fs-4" href="{{ route('allHikes') }}" role="button">Походы</a>
-                        <a class="btn text-white fs-4" href="{{ route('getAllArticle') }}" role="button">База знаний</a>
+                        <a class="btn text-white fs-4" href="{{ route('hikes.index') }}" role="button">Походы</a>
+                        <a class="btn text-white fs-4" href="{{ route('articles.index') }}" role="button">База знаний</a>
                     </ul>
 
                     <!-- Right Side Of Navbar -->
@@ -36,7 +36,7 @@
                         @else
 
                             <li class="nav-item">
-                                <a class="btn-auth btn fs-4" href="{{ route('user',Auth::user()->id)}}" role="button">Профиль</a>
+                                <a class="btn-auth btn fs-4" href="{{ route('user.show',Auth::user()->id)}}" role="button">Профиль</a>
                     </ul>
                 </div>
 

@@ -1,37 +1,32 @@
 <?php
 
-use App\Http\Controllers\ArticlController;
-use App\Http\Controllers\HikesController;
+use App\Http\Controllers\ArticleController;
+use App\Http\Controllers\HikeController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/', [HomeController::class,'allData'])->name('allData');
+Route::get('/', [HomeController::class,'index'])->name('home.index');
 
-Route::get('/hikes', [HikesController::class,'allHikes'])->name('allHikes');
+Route::get('/hikes', [HikeController::class,'index'])->name('hikes.index');
+Route::get('/hikes/show/{id}', [HikeController::class,'show'])->name('hikes.show');
 
-Route::get('/hikes/show/{id}', [HikesController::class,'getHike'])->name('getHike');
-
-Route::get('/articles', [ArticlController::class,'allData'])->name('getAllArticle');
-
-Route::get('/articles/themes/{theme_id}', [ArticlController::class,'getArticleTheme'])->name('getArticleTheme');
-
-Route::get('/articles/show/{id}', [ArticlController::class,'getArticle'])->name('getArticle');
+Route::get('/articles', [ArticleController::class,'index'])->name('articles.index');
+Route::get('/articles/themes/{theme_id}', [ArticleController::class,'showThemes'])->name('articles.showThemes');
+Route::get('/articles/show/{id}', [ArticleController::class,'show'])->name('articles.show');
 
 
 Auth::routes();
 Route::middleware('auth')->group(function () {
-    Route::get('/profile/{id}',[UserController::class,'user'])->name('user');
+    Route::get('/user/{id}',[UserController::class,'show'])->name('user.show');
+    Route::get('/user/{id}/editing',[UserController::class,'edit'])->name('user.edit');
+    Route::post('/user/{id}',[UserController::class,'update'])->name('user.update');
 
-    Route::get('/profile/{id}/editing',[UserController::class,'editing'])->name('editing');
+    Route::get('/hikes/create/',[HikeController::class,'new'])->name('hikes.new');
+    Route::post('/hikes/create/',[HikeController::class,'create'])->name('hikes.create');
 
-    Route::post('/profile/{id}',[UserController::class,'updateUser'])->name('updateUser');
-
-    Route::get('/hikes/create/',[HikesController::class,'createHike'])->name('createHike');
-    Route::post('/hikes/create/',[HikesController::class,'newHike'])->name('newHike');
-
-    Route::get('/articles/create/',[ArticlController::class,'createArticle'])->name('createArticle');
-    Route::post('/articles/create/',[ArticlController::class,'newArticle'])->name('createArticle');
+    Route::get('/articles/create/',[ArticleController::class,'new'])->name('articles.new');
+    Route::post('/articles/create/',[ArticleController::class,'create'])->name('articles.create');
 });
 

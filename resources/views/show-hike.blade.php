@@ -21,7 +21,7 @@
                         @endif
                     </div>
                     <div class="col-12  mb-3">
-                        Тип похода: {{ $hike->hike_type->name }}
+                        Тип похода: {{ $hike->HikeType->name }}
                     </div>
                     <div class="col-12  mb-3">
                         Город: {{ $hike->city->name }}
@@ -43,7 +43,7 @@
                     </div>
                     <div class="col-12 mb-3">
                             @if(\Illuminate\Support\Facades\Auth::check())
-                            <a href="{{route('getHike',[$hike->id])}}" class="btn btn-front-two w-100 fs-1">Присоединиться</a>
+                            <a href="{{route('hikes.show',[$hike->id])}}" class="btn btn-front-two w-100 fs-1">Присоединиться</a>
                            @else
                                 Для участия нужно авторизироваться
                         @endif
@@ -80,10 +80,10 @@
             </div>
                 <div class="col-12 col-xl-3 p-2 d-flex flex-column justify-content-center align-items-center">
                     <div class="col-12 mb-3 fs-1 fw-bold text-center ">
-                       <a href="{{ route('user',$el->User->id)}}" class="text-decoration-none text-black"> {{ $el->User->first_name }}</a>
+                       <a href="{{ route('user.show',$el->User->id)}}" class="text-decoration-none text-black"> {{ $el->User->first_name }}</a>
                     </div>
                     <div class="col-12 mb-3 fs-1 fw-bold text-center ">
-                        <a href="{{ route('user',$el->User->id)}}" class="text-decoration-none text-black"> {{ $el->User->last_name }}</a>
+                        <a href="{{ route('user.show',$el->User->id)}}" class="text-decoration-none text-black"> {{ $el->User->last_name }}</a>
                     </div>
                 </div>
             <div class="col-12 col-xl-6 p-2 d-flex flex-column justify-content-center  align-items-center">

@@ -13,7 +13,7 @@
                             <label for="exampleInputPassword1" class="form-label text-black fs-1">Фильтр поиска</label>
                             <div class="btn-group  d-flex justify-content-around w-100 flex-wrap">
                                 @foreach($themes as $el)
-                                        <a href="{{route('getArticleTheme',[$el->id])}}" class="text-decoration-none ">{{$el->name}}</a>
+                                        <a href="{{route('articles.showThemes',[$el->id])}}" class="text-decoration-none ">{{$el->name}}</a>
                                 @endforeach
                             </div>
                         </div>
@@ -41,7 +41,7 @@
                                     </div>
                                 </div>
                                 <div class="col-12 col-xl-4 p-4 d-flex btn btn-front-two  align-items-center">
-                                    <a href="{{route('getArticle',[$el->id])}}" class="btn btn-front-two w-100 fs-1">Подробней</a>
+                                    <a href="{{route('articles.show',[$el->id])}}" class="btn btn-front-two w-100 fs-1">Подробней</a>
                                 </div>
                             </div>
                         </div>

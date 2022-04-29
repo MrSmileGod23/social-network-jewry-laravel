@@ -9,8 +9,8 @@ class Hike extends Model
 {
     use HasFactory;
 
-    public function hike_type() {
-        return $this->belongsTo(hike_type::class, 'type_id');
+    public function HikeType() {
+        return $this->belongsTo(HikeType::class, 'type_id');
     }
 
     public function city() {
@@ -18,7 +18,7 @@ class Hike extends Model
     }
 
     public function users() {
-        return $this->hasMany(Hike_user::class, 'id');
+        return $this->hasMany(HikeUser::class, 'id');
     }
 
     protected $fillable = [

@@ -33,7 +33,7 @@
                             </div>
                             <div class="col-12 p-4 col-xl-3 justify-content-between d-flex flex-column fs-4">
                                 <div class="col-12  mb-3">
-                                    {{ $el->hike_type->name }}
+                                    {{ $el->HikeType->name }}
                                 </div>
                                 <div class="col-12  mb-3">
                                    Сложность: {{ $el->difficulty }} к.с.
@@ -58,7 +58,7 @@
                                     {{ Str::limit($el->info, 500) }}
                                 </div>
                                 <div class="col-12 mb-3">
-                                    <a href="{{route('getHike',[$el->id])}}" class="btn btn-front-two w-100 fs-1">Подробней</a>
+                                    <a href="{{route('hikes.show',[$el->id])}}" class="btn btn-front-two w-100 fs-1">Подробней</a>
                                 </div>
                             </div>
                         </div>

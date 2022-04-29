@@ -7,7 +7,7 @@
 @section('content')
 
 <div class="container">
-    <form class="form-control mt-5" action="{{route('updateUser',[$user->id])}}" method="POST" enctype="multipart/form-data">
+    <form class="form-control mt-5" action="{{route('user.update',[$user->id])}}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">
             <label for="img">Фотография профиля</label>

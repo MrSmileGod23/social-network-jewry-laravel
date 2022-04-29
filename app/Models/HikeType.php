@@ -5,7 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Hike_invitation extends Model
+class   HikeType extends Model
 {
     use HasFactory;
+
+
+    public function Hike()
+    {
+        return $this->hasMany(Hike::class);
+    }
 }

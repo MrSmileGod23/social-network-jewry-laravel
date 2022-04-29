@@ -5,10 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Hike_user extends Model
+class HikeUser extends Model
 {
     use HasFactory;
-    protected $table = 'hike_users';
 
 
     public function user() {

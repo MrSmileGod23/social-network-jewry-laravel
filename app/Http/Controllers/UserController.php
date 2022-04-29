@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 
 use App\Models\City;
 use App\Models\Hike;
-use App\Models\Hike_user;
+use App\Models\HikeUser;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -17,10 +17,10 @@ class UserController extends Controller
 
 
 
-    public function user($id,Request $request)
+    public function show($id,Request $request)
     {
         $user= User::find($id);
-        $hike= Hike_user::where('user_id',$id)->paginate(2);
+        $hike= HikeUser::where('user_id',$id)->paginate(2);
         $current_user = $request->user();
         return view('profile',[
             'user' => $user,
@@ -30,7 +30,7 @@ class UserController extends Controller
 
     }
 
-    public function editing(Request $request)
+    public function edit(Request $request)
     {
         $current_user = $request->user();
         $city = City::get();
@@ -43,7 +43,7 @@ class UserController extends Controller
 
 
 
-    public function updateUser(Request $request, User $id){
+    public function update(Request $request, User $id){
 
         $request->validate([
             'first_name' => 'regex:/^[а-яА-ЯA-Za-z\- ,]+$/u',
