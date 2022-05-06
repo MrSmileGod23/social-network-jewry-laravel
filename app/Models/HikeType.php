@@ -9,9 +9,9 @@ class   HikeType extends Model
 {
     use HasFactory;
 
-
     public function Hike()
     {
+
         return $this->hasMany(Hike::class);
     }
 }

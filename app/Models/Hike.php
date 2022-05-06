@@ -9,18 +9,6 @@ class Hike extends Model
 {
     use HasFactory;
 
-    public function HikeType() {
-        return $this->belongsTo(HikeType::class, 'type_id');
-    }
-
-    public function city() {
-        return $this->belongsTo(City::class, 'city_id');
-    }
-
-    public function users() {
-        return $this->hasMany(HikeUser::class, 'id');
-    }
-
     protected $fillable = [
         'id',
         'type_id',
@@ -36,4 +24,21 @@ class Hike extends Model
         'mileage',
         'img'
     ];
+
+    public function HikeType() {
+
+        return $this->belongsTo(HikeType::class, 'type_id');
+    }
+
+    public function city() {
+
+        return $this->belongsTo(City::class, 'city_id');
+    }
+
+    public function users() {
+
+        return $this->hasMany(HikeUser::class, 'id');
+    }
+
+
 }

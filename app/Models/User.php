@@ -11,15 +11,7 @@ use Laravel\Sanctum\HasApiTokens;
 class User extends Authenticatable
 {
     use HasApiTokens, HasFactory, Notifiable;
-    protected $table = 'users';
 
-    public function hikeusers()
-    {
-        return $this->hasMany(Hike_user::class);
-    }
-    public function cities() {
-        return $this->belongsTo(City::class, 'city_id');
-    }
     /**
      * The attributes that are mass assignable.
      *
@@ -58,4 +50,15 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function hikeusers()
+    {
+
+        return $this->hasMany(HikeUser::class);
+    }
+
+    public function cities() {
+
+        return $this->belongsTo(City::class, 'city_id');
+    }
 }

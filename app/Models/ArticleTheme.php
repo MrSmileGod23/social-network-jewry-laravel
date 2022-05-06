@@ -9,9 +9,12 @@ class ArticleTheme extends Model
 {
     use HasFactory;
 
+    protected $fillable =['name'];
+
     public function Article()
     {
+
         return $this->hasMany(Article::class);
     }
-    protected $fillable =['name'];
+
 }

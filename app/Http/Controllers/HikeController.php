@@ -16,6 +16,7 @@ class HikeController extends Controller
     {
         $hike= Hike::paginate(4);
         $themes = ArticleTheme::get();
+
         return view('hikes',[
             'hike' => $hike,
             'themes' => $themes
@@ -29,6 +30,7 @@ class HikeController extends Controller
         $users = HikeUser::where('hike_id',$id)->get();
         $reviews = HikeReview::get();
         $ldate = date('Y-m-d');
+
         return view('show-hike',[
             'hike' => $hike,
             'themes' => $themes,
@@ -37,19 +39,21 @@ class HikeController extends Controller
             'ldate' => $ldate
         ]);
     }
+
     public function new()
     {
         $city = City::get();
         $type = HikeType::get();
+
         return view('createHike',[
             'city' => $city,
             'type' => $type,
         ]);
     }
+
     public function create(Request $request)
     {
         $current_user = $request->user();
-
 
         $hike=Hike::create([
             'type_id'  =>$request->type_id,
@@ -64,6 +68,7 @@ class HikeController extends Controller
             'route'   =>$request->route,
             'mileage'   =>$request->mileage
         ]);
+
         if ($request->hasFile('img')) {
             $destinationPath = storage_path('app/public/img/hikes/');
             $fileName = $hike->id.'.jpg';
@@ -78,9 +83,6 @@ class HikeController extends Controller
             'role'=>'Создатель'
         ]);
 
-
-
         return redirect()->action([UserController::class,'user'], ['id' => $current_user ]);
-
     }
 }

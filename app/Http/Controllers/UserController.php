@@ -13,35 +13,29 @@ use Illuminate\Support\Facades\Validator;
 
 class UserController extends Controller
 {
-
-
-
-
     public function show($id,Request $request)
     {
         $user= User::find($id);
         $hike= HikeUser::where('user_id',$id)->paginate(2);
         $current_user = $request->user();
+
         return view('profile',[
             'user' => $user,
             'hike' => $hike,
             'current_user' => $current_user
         ]);
-
     }
 
     public function edit(Request $request)
     {
         $current_user = $request->user();
         $city = City::get();
+
         return view('profile-editing',[
             'city' => $city,
             'user' => $current_user
         ]);
-
     }
-
-
 
     public function update(Request $request, User $id){
 
@@ -58,6 +52,7 @@ class UserController extends Controller
                 'img' =>$fileName
             ]);
         }
+
         $id->update([
             'first_name'=>$request->first_name,
             'last_name'=>$request->last_name,
@@ -67,7 +62,7 @@ class UserController extends Controller
             'info'=>$request->info,
             'telephone'=>$request->telephone
         ]);
+
         return redirect()->action([UserController::class,'user'], [$id->id]);
     }
-
 }

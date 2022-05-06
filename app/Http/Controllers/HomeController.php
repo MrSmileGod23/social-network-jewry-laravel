@@ -25,13 +25,10 @@ class HomeController extends Controller
     {
         $city = City::get();
         $type = HikeType::get();
+
         return view('home',[
             'city' => $city,
             'type' => $type
         ]);
-
     }
-
-
-
 }

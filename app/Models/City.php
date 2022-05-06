@@ -11,10 +11,13 @@ class City extends Model
 
     public function Hike()
     {
+
         return $this->hasMany(Hike::class);
     }
+
     public function city()
     {
+
         return $this->hasMany(City::class);
     }
 
